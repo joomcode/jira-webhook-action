@@ -61,6 +61,10 @@ export async function getPullRequestIssueIds(pr: PullRequestType): Promise<strin
     extractIssueNumbers(pr.title).map((id) => ids.add(id));
   }
 
+  if (typeof pr.head?.ref === 'string') {
+    extractIssueNumbers(pr.head.ref).map((id) => ids.add(id));
+  }
+
   return [...ids];
 }
 

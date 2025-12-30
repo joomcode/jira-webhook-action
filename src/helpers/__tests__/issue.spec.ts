@@ -17,7 +17,7 @@ describe('extractIssueNumbers function', () => {
 
   it('should extract issue numbers when surrounded by non-alphanumeric characters', () => {
     const input = 'Issue: (ABC-789), Dash-123, Colon:XYZ-456';
-    const expectedOutput = ['ABC-789', 'XYZ-456'];
+    const expectedOutput = ['ABC-789', 'DASH-123', 'XYZ-456'];
 
     expect(extractIssueNumbers(input)).toEqual(expectedOutput);
   });
